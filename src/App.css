@@ -1,0 +1,11 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  background-image: url(assets/loginBG.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
