@@ -81,7 +81,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user", { name, email, pass, pic },
+        `${process.env.REACT_APP_BACKEND_URL}/api/user`, { name, email, pass, pic },
         config);
       toast({
         title: "Registration Successful",
@@ -90,8 +90,6 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
-
-      localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
       history.push('/');
       window.location.reload(true);

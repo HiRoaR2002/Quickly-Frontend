@@ -34,7 +34,7 @@ const Login = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user/login", { email, pass },
+        `${process.env.REACT_APP_BACKEND_URL}/api/user/login`, { email, pass },
         config);
       toast({
         title: "Login Successful",
@@ -46,6 +46,7 @@ const Login = () => {
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
       history.push('/chats');
+      window.location.reload();
     }
     catch (error) {
       toast({
